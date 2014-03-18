@@ -22,17 +22,36 @@
 <div id="page" class="hfeed site">
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'engeene-core' ); ?></h1>
-			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'engeene-core' ); ?></a>
+		<div class="navbar navbar-default navbar-static-top">
+			<div class="container-fluid">
+				<?php // Brand and toggle get grouped for better mobile display ?>
+				<div class="navbar-header site-branding">
+					<button type="button" class="navbar-toggle menu-toggle" data-toggle="collapse" data-target="site-navigation">
+						<span class="sr-only"><?php _e( 'Toggle navigation', 'engeene-core' ); ?></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+				</div><!-- .navbar-header -->
 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
+				<?php // Collect the nav links, forms, and other content for toggling ?>
+				<nav class="collapse navbar-collapse" id="site-navigation" role="navigation">
+					<h3 class="sr-only"><?php _e( 'Menu', 'engeene-core' ); ?></h3>
+					<div class="sr-only skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'engeene-core' ); ?>"><?php _e( 'Skip to content', 'engeene-core' ); ?></a></div>
+					<?php wp_nav_menu( array(
+						'theme_location'	=> 'primary',
+						'container'			=> false,
+						'menu_class'		=> 'nav navbar-nav',
+						'show_home'			=> true,
+						'fallback_cb'		=> 'engeene_core_page_menu',
+						'depth'				=> 1,
+						//'walker'			=> new Engeene_Walker
+					) ); ?>
+				</nav>
+			</div>
+		</div><!-- .navbar -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
