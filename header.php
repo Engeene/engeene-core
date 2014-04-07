@@ -27,7 +27,7 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<nav id="site-navigation" class="main-navigation navbar-core" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', 'engeene-core' ); ?></h1>
 			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'engeene-core' ); ?></a>
 
