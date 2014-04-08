@@ -23,7 +23,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<div class="navbar navbar-default navbar-static-top">
+		<div class="navbar navbar-core navbar-static-top">
 			<div class="container-fluid">
 				<?php // Brand and toggle get grouped for better mobile display ?>
 				<div class="navbar-header site-branding">
