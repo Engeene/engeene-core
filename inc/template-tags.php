@@ -11,6 +11,8 @@ if ( ! function_exists( 'engeene_core_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  *
+ * @since 1.0.0
+ *
  * @return void
  */
 function engeene_core_paging_nav() {
@@ -40,6 +42,8 @@ endif;
 if ( ! function_exists( 'engeene_core_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
+ *
+ * @since 1.0.0
  *
  * @return void
  */
