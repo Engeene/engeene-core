@@ -33,7 +33,6 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 				</div><!-- .navbar-header -->
 
 				<?php // Collect the nav links, forms, and other content for toggling ?>
@@ -45,7 +44,7 @@
 						'container'			=> false,
 						'menu_class'		=> 'nav navbar-nav',
 						'show_home'			=> true,
-						'fallback_cb'		=> 'engeene_core_page_menu',
+						'fallback_cb'		=> 'Bootstrap_Walker::fallback',//'engeene_core_page_menu',
 						'depth'				=> 3,
 						'walker'			=> new Bootstrap_Walker
 					) ); ?>
