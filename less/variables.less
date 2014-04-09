@@ -2,6 +2,18 @@
 // VARIABLES
 //--------------------------------------------------
 
+// Core color scheme
+@blue:                                   #3399DB;
+@blue-light:                             #65B8ED;
+@blue-clear:                             #8AC6ED;
+@blue-dark:                              #467FA4;
+@blue-darker:                            #115D8E;
+@orange:                                 #FFA430;
+@orange-light:                           #FFBA64;
+@orange-clear:                           #FFCD8C;
+@brown:                                  #A66310;
+@brown-light:                            #BF8C4B;
+
 // Typography
 // ----------
 
@@ -11,22 +23,22 @@
 // Core navbar
 // Reset Core navbar basics
 @navbar-core-color:                      #FFF;
-@navbar-core-bg:                         #3399DB;
-@navbar-core-border:                     darken(@navbar-core-bg, 10%);
+@navbar-core-bg:                         @blue;
+@navbar-core-border:                     @blue-dark;
 
 // Core navbar links
 @navbar-core-link-color:                 #FFF;
-@navbar-core-link-hover-color:           #FFA430;
-@navbar-core-link-hover-bg:              transparent;
+@navbar-core-link-hover-color:           #FFF;
+@navbar-core-link-hover-bg:              @blue-clear;
 @navbar-core-link-active-color:          @navbar-core-link-hover-color;
-@navbar-core-link-active-bg:             darken(@navbar-core-bg, 10%);
+@navbar-core-link-active-bg:             @blue-dark;
 @navbar-core-link-disabled-color:        #444;
 @navbar-core-link-disabled-bg:           transparent;
 
 // Core navbar brand label
 @navbar-core-brand-color:                @navbar-core-link-color;
-@navbar-core-brand-hover-color:          #FFA430;
-@navbar-core-brand-hover-bg:             transparent;
+@navbar-core-brand-hover-color:          #FFF;
+@navbar-core-brand-hover-bg:             @blue-clear;
 
 // Core navbar toggle
 @navbar-core-toggle-hover-bg:            #333;
