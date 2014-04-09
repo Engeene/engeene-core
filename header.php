@@ -46,8 +46,8 @@
 						'menu_class'		=> 'nav navbar-nav',
 						'show_home'			=> true,
 						'fallback_cb'		=> 'engeene_core_page_menu',
-						'depth'				=> 1,
-						//'walker'			=> new Engeene_Walker
+						'depth'				=> 3,
+						'walker'			=> new Bootstrap_Walker
 					) ); ?>
 				</nav>
 			</div>
