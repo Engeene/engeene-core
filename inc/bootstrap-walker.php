@@ -62,7 +62,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 			$class_names = join( ' ', (array) apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
 			if ( ! empty( $args->has_children ) && $args->has_children )
-				$class_names .= ' dropdown';
+				$class_names .= ' dropdown yamm-fw';
 
 			if ( in_array( 'current-menu-item', $classes ) )
 				$class_names .= ' active';
