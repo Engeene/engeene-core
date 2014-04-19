@@ -1,0 +1,29 @@
+{
+	"name": "engeene/engeene-core",
+	"homepage": "https://github.com/Engeene/engeene-core",
+	"license": "GPL-3.0+",
+	"authors": [
+		{
+			"name": "Mattia Migliorini",
+			"email": "deshack@ubuntu.com",
+			"homepage": "http://www.deshack.net",
+			"role": "Developer"
+		},
+		{
+			"name": "Jacopo Rabolini",
+			"email": "jacoporabolini@gmail.com",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/Engeene/engeene-core/issues",
+		"source": "https://github.com/Engeene/engeene-core/archive/master.zip"
+	},
+	"config": {
+		"vendor-dir": "lib"
+	},
+	"require": {
+		"twbs/bootstrap": "~3.1.1",
+		"geedmo/yamm3": "dev-master"
+	}
+}
