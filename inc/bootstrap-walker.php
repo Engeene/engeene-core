@@ -3,7 +3,7 @@
  * Class Name: wp_bootstrap_navwalker
  * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
  * Description: A custom WordPress nav walker class to implement the Bootstrap 3 navigation style in a custom theme using the WordPress built in menu manager.
- * Version: 2.0.4
+ * Version: 4.0.0
  * Author: Edward McIntyre - @twittem
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -12,6 +12,10 @@
 class Bootstrap_Walker extends Walker_Nav_Menu{
 	
 	/**
+	 * Display start of a level
+	 *
+	 * Note that $depth refers to the depth of the parent element.
+	 *
 	 * @see Walker::start_lvl()
 	 * @since 3.0.0
 	 *
@@ -21,9 +25,47 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
 		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+
+		switch ( $depth ) {
+			case 0:
+				$output .= $indent . "\t" . '<div class="row">' . "\n";
+				$output .= $indent . "\t\t" . '<div class="col-md-3">' . "\n";
+				$output .= $indent . "\t\t\t" . '<div class="yamm-content">' . "\n";
+				break;
+			case 1:
+				$output .= $indent . "\t" . '<div class="col-md-9">' . "\n";
+				break;
+		}
 	}
 
 	/**
+	 * Display and of a level
+	 *
+	 * @see Walker::end_lvl()
+	 * @since 4.0.0
+	 *
+	 * @param string $output Passed by reference. Used to append additional content.
+	 * @param int $depth Depth of page. Used for padding.
+	 * @param object $args
+	 */
+	public function end_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat( "\t", $depth );
+
+		switch ( $depth ) {
+			case 0:
+				$output .= $indent . "\t\t\t</div><!-- .yamm-content -->\n";
+				$output .= $indent . "\t\t</div><!-- .col-md-3 -->\n";
+				$output .= $indent . "\t</div><!-- .row -->\n";
+				break;
+			case 1:
+				$output .= $indent . "\t</div><!-- .col-md-9 -->\n";
+				break;
+		}
+		$output .= $indent . "</ul>\n";
+	}
+
+	/**
+	 * Display start of an element
 	 * @see Walker::start_el()
 	 * @since 3.0.0
 	 *
@@ -110,7 +152,7 @@ class Bootstrap_Walker extends Walker_Nav_Menu{
 			 * if there is a value in the attr_title property. If the attr_title
 			 * property is NOT null we apply it as the class name for the glyphicon.
 			 */
-			if ( ! empty( $item->attr_title ) )
+			if ( ! empty( $item->attr_title && strpos( $item->attr_title, 'glyphicon' ) ) )
 				$item_output .= '<a'. $attributes .'><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
 			else
 				$item_output .= '<a'. $attributes .'>';
